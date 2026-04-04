@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junly's Homepage Bon appétit!</title>
+    
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
+    <!-- fontawesome字体 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- stylesheet css内容 -->
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+ <header>
+    <nav>
+      <a class="nav-items active">主页</a>
+      <a class="nav-items">关于</a>
+      <a class="nav-items">笔记</a>
+      <a class="nav-items">观察者说</a>
+    </nav>
+  </header>
+   
+  <div class="content">
+    <img src="img/bg.jpg" alt="bg" id="bg">
+    <img src="img/moon.png" alt="moon" id="moon">
+    <img src="img/mountain.png" alt="mountain" id="mountain">
+    <img src="img/road.png" alt="road" id="road">
+    <div class="title">
+      <h3 id="text1">The Land of Strange Beauty</h3>
+      <h1 id="text2">Offscape</h1>
+    </div>
+      <img src="img/figure(2).png" alt="figure" id="figure">
+      <section></section>
+    <div class="info-wrap">
+      <h1 id="text3">蜕变时代</h1>
+<blockquote>
+
+  <p>&quot; <em>葱葱行者，无疆无秋。来也葱匆，去也葱匆</em>&quot; <br></p>
+
+    </div>
+
+     <div class="cta">
+      <button>   <!--修改跳转<button onclick="location.href='https://example.com'">    -->   
+        Contact Me
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+  </div>
+  <script typed="text/javascript">
+const moon = document.getElementById('moon')
+const mountain = document.getElementById('mountain')
+const road = document.getElementById('road')
+const text1 = document.getElementById('text1')
+const text2 = document.getElementById('text2')
+const text3 = document.getElementById('text3')
+const figure = document.getElementById('figure')
+
+window.addEventListener('scroll', () => {
+  const value = window.scrollY
+
+  /**
+   * 核心在于每个对象都是top: 0, left: 0
+   * 即使是text，也是通过flex定位的，再设置为relative，相对于自身定位
+   * 所以，这里设置top和left时通过value的倍数来定，就相当于对象移动了value的倍数长度。
+   */
+  bg.style.top = -value * 0.5 + 'px'
+  moon.style.left = -value * 0.5 + 'px'
+  mountain.style.top = -value * 0.15 + 'px';
+  road.style.top = -value * 0.15 + 'px';
+  figure.style.bottom = value * 0.15 + 'px';
+  text1.style.top = value * 1 + 'px';
+  text2.style.top = value * 1 + 'px';
+  text3.style.top = value * 1 + 'px';
+})
+  </script>
+ </body>
+</html>
