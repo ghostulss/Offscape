@@ -19,6 +19,7 @@ body {
 .content {
   position: relative;
   height: 100vh;        /* 关键：明确高度，让子元素 height:100% 生效 */
+  overflow-x: clip;      /* 裁切手机上延伸到屏幕外的人物图层 */
   /* 不要加 overflow: hidden，下方内容可正常滚动 */
 }
 
