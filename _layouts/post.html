@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | escape }} · {{ site.title | escape }}</title>
+  {% if page.description %}<meta name="description" content="{{ page.description | escape }}">{% endif %}
+  <link rel="stylesheet" href="{{ '/assets/css/notes.css' | relative_url }}">
+</head>
+<body class="article-page">
+  <header class="site-header">
+    <nav class="site-nav" aria-label="主导航">
+      <a class="site-brand" href="{{ '/' | relative_url }}">Offscape</a>
+      <a class="site-nav-link" href="{{ '/' | relative_url }}">首页</a>
+      <a class="site-nav-link" href="{{ '/notes/' | relative_url }}">笔记</a>
+    </nav>
+  </header>
+
+  <main>
+    {% if page.hero %}
+    <figure class="article-hero">
+      <img src="{{ page.hero | relative_url }}" alt="{{ page.hero_alt | default: page.title | escape }}">
+      {% if page.hero_caption %}<figcaption>{{ page.hero_caption | escape }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+
+    <article class="article-shell">
+      <p class="article-back"><a href="{{ '/notes/' | relative_url }}">← 返回笔记</a></p>
+      <header class="article-header">
+        <p class="eyebrow">OFFSCAPE / NOTES</p>
+        <h1>{{ page.title | escape }}</h1>
+        <p class="article-meta"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y年%m月%d日' }}</time>{% if page.author %}<span aria-hidden="true"> · </span>{{ page.author | escape }}{% endif %}</p>
+        {% if page.description %}<p class="article-deck">{{ page.description | escape }}</p>{% endif %}
+      </header>
+      <div class="article-content">{{ content }}</div>
+      <footer class="article-end"><a href="{{ '/notes/' | relative_url }}">查看所有笔记 →</a></footer>
+    </article>
+  </main>
+
+  <footer class="site-footer"><a href="{{ '/' | relative_url }}">返回 Offscape 首页</a></footer>
+</body>
+</html>
