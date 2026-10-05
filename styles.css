@@ -379,7 +379,7 @@ nav {
   }
 
   .title {
-    top: 35%;
+    top: 50%;
   }
 
   #mountain {
@@ -391,7 +391,7 @@ nav {
 
   #figure {
     left: 50%;
-    bottom: 26%;
+    bottom: 0;
     height: 30%;
     width: auto;
     /* 图片左侧有透明留白，按人物本身的中心定位。 */

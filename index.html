@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <!-- stylesheet css内容 -->
-   <link rel="stylesheet" href="styles.css?v=20261005-mobile">
+   <link rel="stylesheet" href="styles.css?v=20261005-mobile-position">
 </head>
 <body>
 
@@ -74,9 +74,7 @@ function updateParallax() {
   moon.style.left = -value * 0.5 + 'px'
   mountain.style.top = -value * 0.15 + 'px';
   road.style.top = -value * 0.15 + 'px';
-  figure.style.bottom = window.matchMedia('(max-width: 768px)').matches
-    ? 'calc(26% + ' + value * 0.15 + 'px)'
-    : value * 0.15 + 'px';
+  figure.style.bottom = value * 0.15 + 'px';
   text1.style.top = value * 1 + 'px';
   text2.style.top = value * 1 + 'px';
   text3.style.top = value * 1 + 'px';
