@@ -369,12 +369,46 @@ nav {
   }
 
   .title h1 {
-    font-size: clamp(2.75rem, 12vw, 5rem);
-    letter-spacing: 0.08em;
+    font-size: clamp(3rem, 14vw, 5.5rem);
+    letter-spacing: 0.025em;
   }
 
   .title h3 {
     font-size: clamp(0.75rem, 2.8vw, 1rem);
     letter-spacing: 0.12em;
   }
+
+  .title {
+    top: 35%;
+  }
+
+  #mountain {
+    width: 118%;
+    height: 118%;
+    left: -9%;
+    margin-top: -18vh;
+  }
+
+  #figure {
+    left: 50%;
+    bottom: 26%;
+    height: 30%;
+    width: auto;
+    /* 图片左侧有透明留白，按人物本身的中心定位。 */
+    transform: translateX(-64.3%);
+    animation: mobileFigureIn 1s ease-out forwards;
+  }
+
+  .info-wrap {
+    bottom: 12%;
+  }
+
+  .cta {
+    bottom: 4%;
+  }
+}
+
+@keyframes mobileFigureIn {
+  from { transform: translate(-64.3%, 100px); }
+  to { transform: translate(-64.3%, 0); }
 }
